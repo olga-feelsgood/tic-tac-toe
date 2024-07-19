@@ -1,8 +1,7 @@
-import { GameCell } from './gameCell'
-import { GameInfo } from './gameInfo'
-import ResetButon from './resetButon';
-import { useGameState } from './useGameState';
-
+import { GameCell } from "./gameCell";
+import { GameInfo } from "./gameInfo";
+import ResetButon from "./resetButon";
+import { useGameState } from "./useGameState";
 
 export function Game() {
   const {
@@ -12,13 +11,12 @@ export function Game() {
     isDraw,
     resetGame,
     toggleCell,
-    getWinnerCell
+    getWinnerCell,
   } = useGameState();
 
   return (
     <div className="font-sans flex flex-col items-center w-48 mx-auto my-[100px] p-5 border border-black">
-      <GameInfo
-        isDraw={isDraw}
+      <GameInfo isDraw={isDraw}
         winnerSymbol={winnerSymbol}
         currentStep={currentStep}
       />
@@ -34,5 +32,5 @@ export function Game() {
       </div>
       <ResetButon onClick={resetGame} />
     </div>
-  )
+  );
 }
